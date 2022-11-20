@@ -25,7 +25,7 @@ function addProject(event) {
     let getImage = URL.createObjectURL(image[0]); // fungsi URL.createObjectURL untuk menangkap url gambar / path. Posisi dibawah kondisi karena, jika diatas kondisi akan error karena gambar belum ada gambar yang di inputkan
 
     // Logic get all checked
-    let result = []
+    let result = [];
     let checkboxes = document.getElementsByName("mycheckbox");
 
     for(let i = 0; i < checkboxes.length; i++) {
@@ -55,7 +55,6 @@ function addProject(event) {
 function getBlog() {
     let cardContainer = document.getElementById("card-container");
     let allInput = document.querySelectorAll(".refresh");
-    let checkboxes = document.querySelectorAll(".mycheckbox");
 
     cardContainer.innerHTML = ''; 
 
