@@ -50,7 +50,11 @@ body {
     transition: 0.5s all;
 }
 
-nav ul li a:hover {
+nav ul li a:focus {
+    color: black;
+}
+
+.navbar-text {
     color: black;
 }
 

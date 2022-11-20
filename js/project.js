@@ -13,15 +13,14 @@ function addProject(event) {
     // console.log("Gambar :", image[0]); 
     // console.log("URL Gambar :", getImage);
     
-    // logic alert
+    // Logic input data
     if(projectName == "" || startDate == "" || endDate == "" || desc == "" || image == "" ){
         return alert("All input field must be not empty");
     } else {
-        alert("New Card Created Successfully")
+        alert("New Card Created Successfully");
     }
-    let getImage = URL.createObjectURL(image[0]); // fungsi URL.createObjectURL untuk menangkap url gambar / path. Posisi dibawah kondisi karena, jika diatas kondisi akan error karena gambar belum ada gambar yang di inputkan
 
-   
+    let getImage = URL.createObjectURL(image[0]); // fungsi URL.createObjectURL untuk menangkap url gambar / path. Posisi dibawah kondisi karena, jika diatas kondisi akan error karena gambar belum ada gambar yang di inputkan
 
     // Logic get all checked
     let result = []
@@ -47,7 +46,6 @@ function addProject(event) {
     }
 
     data.push(blog);
-    console.log("Data :", data)
     getBlog();
 }
 
@@ -75,7 +73,7 @@ function getBlog() {
     };
 }
    
-// Function Render Time
+// Function render time
 function renderTime(time){
     // let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Des"];
     let date = new Date(time);
@@ -88,62 +86,73 @@ function renderTime(time){
     // return `${day} ${months[date.getMonth()]} ${date.getFullYear()}`
 }
 
+// function distance start date - end date
 function getDistanceTime(startDate, endDate) {
     let start = new Date(startDate);
     let end = new Date(endDate);
-    let miliSecond = 1000;
-    let duration = (end - start) / miliSecond;
 
-    // Konversi waktu
-    let distanceYears = Math.floor(duration * 60 * 60 * 24 * 30 * 12)
-    let distanceMonths = Math.floor(duration * 60 * 60 * 24 * 30);
-    let distanceDays = Math.floor(duration * 60 * 60 * 24);
+    let duration = (end - start);
 
-    console.log(duration)
-    // console.log(distanceYears);
-    // console.log(distanceMonths);
-    // console.log(distanceDays);
+    if(duration < 0) {
+        alert("Start date must be greater than End date");    
+    } else if (duration == 0) {
+        return 0 + " day";
+    } else {
+        // Konversi waktu
+        let second = duration / 1000;
+        let minute = Math.floor(second / 60);
+        second = second % 60;
+        let hour = Math.floor(minute / 60);
+        minute = minute % 60;
+        let day = Math.floor(hour / 24);
+        hour = hour % 24;
+        let month = Math.floor(day / 30);
+        day = day % 30;
+        let year = Math.floor(month / 12);
+        month = month % 12;
 
-    // if(distanceMonths > 0) {
-    //     if (distanceDays % 30 >= 1) {
-    //         return `${distanceMonths} mounths ${distanceDays} days`;
-    //     } else {
-    //         return `${distanceMonths} months`;
-    //     }
-    // } else if (distanceDays > 0) {
-    //     return `${distanceDays} days`;
-    // } else {
-    //     return `0 days`;
-    // }
-    let jam = Math.floor(duration / 3600);
-	duration = duration - (jam * 3600);
-	let menit = Math.floor(duration / 60);
-	let detik = Math.floor(duration - (menit * 60));
+        // Cek kondisi
+        if(year == 0) {
+            year = "";
+        } else {
+            year += " year";
+        }
+        
+        if(month == 0){
+            month = ""
+        } else {
+            month += " month"
+        }
 
-    return `${jam} jam, ${menit} menit, ${detik} detik`;
+        if(day == 0){
+            day = "";
+        } else {
+            day += " day";
+        }
 
-    
+        return `${year} ${month} ${day}`;
 
-    // if(distanceWeeks > 0){
-    //     return `${distanceWeeks} weeks ago`;
-    // } else if (distanceDays > 0) {
-    //     return `${distanceDays} days ago`;
-    // } else if (distanceHours > 0) {
-    //     return `${distanceHours} hours ago`;
-    // } else if (distanceMinutes > 0) {
-    //     return `${distanceMinutes} minutes ago`;
-    // } else {
-    //     return `${distanceSeconds} seconds ago`;
-    // }
+        // if(distanceWeeks > 0){
+        //     return `${distanceWeeks} weeks ago`;
+        // } else if (distanceDays > 0) {
+        //     return `${distanceDays} days ago`;
+        // } else if (distanceHours > 0) {
+        //     return `${distanceHours} hours ago`;
+        // } else if (distanceMinutes > 0) {
+        //     return `${distanceMinutes} minutes ago`;
+        // } else {
+        //     return `${distanceSeconds} seconds ago`;
+        // }
+    }
 }
 
 // --------------------------------------------------------------------
 // Logic Input Color
 let inputBorderColor1 = document.querySelectorAll(".border-color");
 let inputBorderColor2 = document.querySelector(".form-container form");
-let input = document.querySelectorAll("input");
 let btnSubmit = document.querySelector(".btn-submit");
 let imgUpload = document.querySelector(".img-upload");
+// let input = document.querySelectorAll("input");
 
 inputBorderColor1.forEach(function(ibc1) {
     ibc1.addEventListener('click', function(event) {
@@ -182,6 +191,9 @@ inputBorderColor2.addEventListener('mouseenter', function(){
 inputBorderColor2.addEventListener('mouseleave', function(){
     imgUpload.classList.remove("input-border");
 });
+// End Logic Input Color
+
+
 
 
 
