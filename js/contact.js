@@ -21,7 +21,7 @@ function submitData(event){
     }
     
     let a = document.createElement("a");
-    a.href = `mailto:${email}?Subject=${subject}&body= Hello my name is ${name}, ${message}. Silahkan kontak nomor handphone saya di ${phone}`;
+    a.href = `mailto:${email}?Subject=${subject}&body= Hello my name is ${name}, ${message}. Please contact my phone number at ${phone}`;
     a.target = "_blank";
     a.click();
 
