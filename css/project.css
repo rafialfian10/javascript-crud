@@ -256,6 +256,7 @@ input:focus, textarea:focus {
     font-weight: bold;
     border-radius: 5px;
     margin: 0px;
+    transition: 0.5s;
 }
 
 .img-upload p:hover {
