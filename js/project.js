@@ -161,6 +161,7 @@ function getDistanceTime(startDate, endDate) {
 let inputBorderColor1 = document.querySelectorAll(".border-color");
 let inputBorderColor2 = document.querySelector(".form-container form");
 let btnSubmit = document.querySelector(".btn-submit");
+let label = document.querySelector("label.border-color");
 let p = document.querySelector(".img-upload p")
 let imgUpload = document.querySelector(".img-upload label img")
 
@@ -168,30 +169,33 @@ inputBorderColor1.forEach(function(ibc1) {
     ibc1.addEventListener('click', function(event) {
         
         inputBorderColor1.forEach(function(ibc1) {
-            if(ibc1.classList.contains("input-color")){
-                ibc1.classList.remove("input-color");
+            if(ibc1.classList.contains("violet-border")){
+                ibc1.classList.remove("violet-border");
             }
         });    
-        event.target.classList.add("input-color");
-        p.classList.remove("input-color");
-        imgUpload.classList.remove("input-color");  
+        event.target.classList.add("violet-border");
+        p.classList.remove("violet-border");
+        imgUpload.classList.remove("violet-border");  
     });
  
     btnSubmit.addEventListener('mouseover', function() {
         inputBorderColor1.forEach(function(ibc1) {
-            ibc1.classList.remove("input-color");
+            ibc1.classList.remove("violet-border");
         }); 
     });  
 });
 
 inputBorderColor2.addEventListener('mouseenter', function(){
+    label.style.border = "1px solid black"
     inputBorderColor1.forEach(function(ibc1){
-        ibc1.classList.add("input-border");
+        ibc1.classList.add("black-border");
     });
     
     inputBorderColor2.addEventListener('mouseleave', function(){
+        label.style.border = "2px solid white"
         inputBorderColor1.forEach(function(ibc1){
-            ibc1.classList.remove("input-border");
+            ibc1.classList.remove("black-border");
+            ibc1.classList.remove("violet-border");
         });
     });
 });

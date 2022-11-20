@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #eee;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
 }
 
 /* Navbar */
@@ -15,7 +15,7 @@ body {
     width: 100%;
     height: 50px;
     position: fixed;
-    background-color: rgb(255, 75, 75);
+    background-color: rgb(219, 99, 255);
     display: flex;
     margin: auto;
     z-index: 99;
@@ -67,8 +67,8 @@ body {
 .navbar a.aContact {
     width: 120px;
     padding: 7px 4px;
-    background-color: rgb(53, 53, 53);
-    border: 1px solid rgb(53, 53, 53);
+    border: 1px solid rgb(177, 4, 245);
+    background-color: rgb(209, 138, 254); 
     margin-right: 30px;
     border-radius: 20px;
     text-align: center;
@@ -77,27 +77,25 @@ body {
 
 .navbar a.aContact:hover {
     cursor: pointer;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    -1.5px -1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    3px 3px 3px 3px rgba(170, 170, 170, 0.5),
-    -3px -3px 3px 3px rgba(170, 170, 170, 0.5),
-    4.5px 4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5),
-    -4.5px -4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5);
-    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
+    color: black;
 }
-/* End Navbar */
+/* End navbar */
 
-/* Add Project */
-
+/* Add project */
 .form-container {
     margin: auto;
-    margin-bottom: 50px;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 5;
-    background-color: #eee;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     padding-top: 120px;
 }
 
@@ -117,24 +115,14 @@ body {
     transition: 0.5s all;
 }
 
-/* .form-container form:hover {
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 2px 2px 2px 2px rgba(254, 0, 0, 0.5),
-                -2px -2px 2px 2px rgba(254, 0, 0, 0.5),
-                4px 4px 4px 4px rgba(255, 75, 75, 0.5),
-                -4px -4px 4px 4px rgba(255, 75, 75, 0.5),
-                6px 6px 6px 6px rgba(239, 113, 113, 0.5),
-                -6px -6px 6px 6px rgba(239, 113, 113, 0.5);
-} */
-
 input {
     height: 30px;
     display: block;
     padding: 0px 10px;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 2px solid white;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     transition: 0.5s all;
 }
 
@@ -174,13 +162,13 @@ textarea {
     display: block;
     border-radius: 5px;
     padding: 10px 10px;
-    border: 1px solid white;
+    border: 2px solid white;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     transition: 0.5s all;
 }
 
 input:focus, textarea:focus {
     outline: none;
-    background-color: white;
 }
 
 .checkbox-1, .checkbox-2 {
@@ -203,21 +191,6 @@ input:focus, textarea:focus {
     margin: auto;
 }
 
-.form-container input[type="image"] {
-    background-color: white;
-}
-
-.img-upload label img {
-    width: 10px;
-    height: 10px;
-    top: 32px;
-    left: 385px;
-}
-
-.form-container input.input-image {
-    padding: 0;
-}
-
 /* Input Upload Image */
 .img-upload {
     height: 30px;
@@ -233,7 +206,7 @@ input:focus, textarea:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     border-radius: 5px;
     margin: -1px;
     transition: 0.5s all;
@@ -251,7 +224,7 @@ input:focus, textarea:focus {
     width: 20%;
     padding: 5px;
     text-align: center;
-    background-color: rgb(155, 155, 155);
+    background-color: rgb(209, 138, 254); 
     color: rgb(44, 44, 44);
     font-weight: bold;
     border-radius: 5px;
@@ -261,12 +234,12 @@ input:focus, textarea:focus {
 
 .img-upload p:hover {
     cursor: pointer;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    -1.5px -1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    3px 3px 3px 3px rgba(170, 170, 170, 0.5),
-    -3px -3px 3px 3px rgba(170, 170, 170, 0.5),
-    4.5px 4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5),
-    -4.5px -4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
 }
 
 .img-upload label img {
@@ -278,8 +251,7 @@ input:focus, textarea:focus {
 .img-upload label img:hover {
     cursor: pointer;
 }
-
-/* End Input Upload Image */
+/* End input upload image */
 
 .btn-submit {   
     width: 25%;
@@ -288,9 +260,10 @@ input:focus, textarea:focus {
     margin-bottom: 5px;
     padding: 5px;
     border-radius: 15px;
-    background-color: rgb(53, 53, 53);
-    border: 1px solid rgb(53, 53, 53);
-    color: white;
+    border: 1px solid rgb(177, 4, 245);
+    background-color: rgb(209, 138, 254); 
+    color: rgb(44, 44, 44);
+    font-weight: bold;
     font-size: 1rem;
     letter-spacing: 0.5px;
     transition: 0.5s all;
@@ -298,41 +271,38 @@ input:focus, textarea:focus {
 
 .btn-submit:hover {
     cursor: pointer;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5),
-    -1.5px -1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5),
-    3px 3px 3px 3px rgba(170, 170, 170, 0.5),
-    -3px -3px 3px 3px rgba(170, 170, 170, 0.5),
-    4.5px 4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5),
-    -4.5px -4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
 }
 
-.input-color {
-    border-left: 1.5px solid red;
-    border-bottom: 1.5px solid red;
-    border-right: 1.5px solid orange;
-    border-top: 1.5px solid orange;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(254, 0, 0, 0.5),
-                -1.5px -1.5px 1.5px 1.5px rgba(254, 0, 0, 0.5),
-                3px 3px 3px 3px rgba(239, 113, 113, 0.5),
-                -3px -3px 3px 3px rgba(239, 113, 113, 0.5);
+.violet-border {
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
 }
 
-.input-border {
+.black-border {
     border: 1px solid black;
 }
-/* End Add Project */
+/* End add project */
 
 /* Cards */
 .card-container {
     width: 100%;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     gap: 20px 0px;
-    background-color: #eee;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     padding: 50px;
     padding-top: 30px;
 }
@@ -351,19 +321,19 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 15px;
-    background-color: white;
+    background-image: linear-gradient(to right, #dcfaff, #f1caff, #cae0ff );
     transition: 0.5s all;
 }
 
 .cards:hover {
     border-radius: 5px;
     background-color: white;
-    box-shadow: 2px 2px 2px 2px rgba(254, 0, 0, 0.5),
-                -2px -2px 2px 2px rgba(254, 0, 0, 0.5),
-                4px 4px 4px 4px rgba(255, 75, 75, 0.5),
-                -4px -4px 4px 4px rgba(255, 75, 75, 0.5),
-                6px 6px 6px 6px rgba(239, 113, 113, 0.5),
-                -6px -6px 6px 6px rgba(239, 113, 113, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
     transform: scale(1.03);
 }
 
@@ -426,8 +396,10 @@ h2 {
     width: 48%;
     padding: 5px;
     border-radius: 5px;
-    background-color: black;
-    color: white;
+    border: 1px solid rgb(177, 4, 245);
+    background-color: rgb(209, 138, 254); 
+    color: rgb(44, 44, 44);
+    font-weight: bold;
     font-size: 16px;
     letter-spacing: 0.7px;
     transition: 0.5s all;
@@ -435,12 +407,11 @@ h2 {
 
 .cards div button:hover {
     cursor: pointer;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    -1.5px -1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    3px 3px 3px 3px rgba(170, 170, 170, 0.5),
-    -3px -3px 3px 3px rgba(170, 170, 170, 0.5),
-    4.5px 4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5),
-    -4.5px -4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(160, 65, 249, 0.7),
+                -2px -2px 2px 2px rgba(160, 65, 249, 0.7),
+                4px 4px 4px 4px rgba(189, 133, 242, 0.7),
+                -4px -4px 4px 4px rgba(189, 133, 242, 0.7),
+                6px 6px 6px 6px rgba(215, 172, 254, 0.7),
+                -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
 }
-
-/* End Cards */
+/* End cards */

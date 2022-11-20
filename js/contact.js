@@ -42,28 +42,29 @@ inputBorderColor1.forEach(function(ibc1) {
     ibc1.addEventListener('click', function(event) {
         
         inputBorderColor1.forEach(function(ibc1) {
-            if(ibc1.classList.contains("input-color")){
-                ibc1.classList.remove("input-color");
+            if(ibc1.classList.contains("violet-border")){
+                ibc1.classList.remove("violet-border");
             }
         });    
-        event.target.classList.add("input-color");
+        event.target.classList.add("violet-border");
     });
 
     btnSubmit.addEventListener('mouseover', function() {
         inputBorderColor1.forEach(function(ibc1) {
-            ibc1.classList.remove("input-color");
+            ibc1.classList.remove("violet-border");
         });  
     });  
 });
 
 inputBorderColor2.addEventListener('mouseenter', function(){
     inputBorderColor1.forEach(function(ibc1){
-        ibc1.classList.add("border");
+        ibc1.classList.add("black-border");
     });
     
     inputBorderColor2.addEventListener('mouseleave', function(){
         inputBorderColor1.forEach(function(ibc1){
-            ibc1.classList.remove("border");
+            ibc1.classList.remove("black-border");
+            ibc1.classList.remove("violet-border");
         });
     });
 });
