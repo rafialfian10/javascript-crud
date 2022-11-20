@@ -50,11 +50,11 @@ body {
     transition: 0.5s all;
 }
 
-nav ul li a:focus {
+.navbar ul li a:hover {
     color: black;
 }
 
-.navbar-text {
+.nav-link.active {
     color: black;
 }
 
@@ -224,18 +224,23 @@ input:focus, textarea:focus {
     display: flex;
     align-items: center;
     border-radius: 5px;
-    transition: 2s all;
+    transition: 0.5s all;
 }
 
 .img-upload label {
     width: 100%;
-    height: 28px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     border-radius: 5px;
-    margin: 0px;
+    margin: -1px;
+    transition: 0.5s all;
+}
+
+.img-upload input {
+    display: none;
 }
 
 .img-upload label:hover {
@@ -250,7 +255,7 @@ input:focus, textarea:focus {
     color: rgb(44, 44, 44);
     font-weight: bold;
     border-radius: 5px;
-    transition: 0.5s all;
+    margin: 0px;
 }
 
 .img-upload p:hover {
@@ -273,9 +278,6 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
-.img-upload input {
-    display: none;
-}
 /* End Input Upload Image */
 
 .btn-submit {   

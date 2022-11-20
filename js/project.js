@@ -8,17 +8,19 @@ function addProject(event) {
     let startDate = document.getElementById("start-date").value;
     let endDate = document.getElementById("end-date").value;
     let desc = document.getElementById("desc").value; 
+    let img = document.getElementById("image").value; 
     let image = document.getElementById("image").files; // Untuk menangkap image, pdf, dll. Ini akan mengambil seluruh data files, tapi yang dibutuhkan adalah url/path-nya
     
     // console.log("Gambar :", image[0]); 
     // console.log("URL Gambar :", getImage);
     
     // Logic input data
-    if(projectName == "" || startDate == "" || endDate == "" || desc == "" || image == "" ){
+    if(projectName == "" || startDate == "" || endDate == "" || desc == "" || img == "" ){
         return alert("All input field must be not empty");
-    } else {
+    }  else {
         alert("New Card Created Successfully");
     }
+    // End logic input data
 
     let getImage = URL.createObjectURL(image[0]); // fungsi URL.createObjectURL untuk menangkap url gambar / path. Posisi dibawah kondisi karena, jika diatas kondisi akan error karena gambar belum ada gambar yang di inputkan
 
@@ -31,10 +33,9 @@ function addProject(event) {
             result.push(checkboxes[i].value);
         } 
     }
+    // End logic get all checked
 
-    // Id random with date method
-    let uniqId = Date.now()
-    
+    let uniqId = Date.now();
     let blog = {
         id: uniqId,
         title: projectName,
@@ -49,8 +50,12 @@ function addProject(event) {
     getBlog();
 }
 
+
+// Funvtion add data to card
 function getBlog() {
     let cardContainer = document.getElementById("card-container");
+    let allInput = document.querySelectorAll(".refresh");
+
     cardContainer.innerHTML = ''; 
 
     for(let i = 0; i < data.length; i++) {
@@ -71,8 +76,11 @@ function getBlog() {
                                         </div>
                                     </div>`
     };
+    allInput.forEach(function(i) {
+        i.value = "";
+    })
 }
-   
+
 // Function render time
 function renderTime(time){
     // let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Des"];
@@ -94,7 +102,8 @@ function getDistanceTime(startDate, endDate) {
     let duration = (end - start);
 
     if(duration < 0) {
-        alert("Start date must be greater than End date");    
+        // alert("Start date must be greater than End date");
+        return "-"   
     } else if (duration == 0) {
         return 0 + " day";
     } else {
@@ -147,12 +156,12 @@ function getDistanceTime(startDate, endDate) {
 }
 
 // --------------------------------------------------------------------
-// Logic Input Color
+// Logic input color
 let inputBorderColor1 = document.querySelectorAll(".border-color");
 let inputBorderColor2 = document.querySelector(".form-container form");
 let btnSubmit = document.querySelector(".btn-submit");
-let imgUpload = document.querySelector(".img-upload");
-// let input = document.querySelectorAll("input");
+let p = document.querySelector(".img-upload p")
+let imgUpload = document.querySelector(".img-upload label img")
 
 inputBorderColor1.forEach(function(ibc1) {
     ibc1.addEventListener('click', function(event) {
@@ -163,12 +172,14 @@ inputBorderColor1.forEach(function(ibc1) {
             }
         });    
         event.target.classList.add("input-color");
+        p.classList.remove("input-color");
+        imgUpload.classList.remove("input-color");  
     });
-
+ 
     btnSubmit.addEventListener('mouseover', function() {
         inputBorderColor1.forEach(function(ibc1) {
             ibc1.classList.remove("input-color");
-        });  
+        }); 
     });  
 });
 
@@ -183,15 +194,23 @@ inputBorderColor2.addEventListener('mouseenter', function(){
         });
     });
 });
+// End logic input color
 
-inputBorderColor2.addEventListener('mouseenter', function(){
-    imgUpload.classList.add("input-border");
-});
-    
-inputBorderColor2.addEventListener('mouseleave', function(){
-    imgUpload.classList.remove("input-border");
-});
-// End Logic Input Color
+// Logic navbar color
+// let navbar = document.querySelectorAll(".nav-link");
+
+// navbar.forEach(function(nav) {
+//     nav.addEventListener("click", function(event) {
+//         navbar.forEach(function(nav){
+//             if(nav.classList.contains("active")){
+//                 nav.classList.remove("active");
+//             }
+//         });
+//         // event.preventDefault();
+//         event.target.classList.add("active");
+//     });
+// });
+// End logic navbar color
 
 
 

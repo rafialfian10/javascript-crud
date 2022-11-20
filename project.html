@@ -12,9 +12,9 @@
     <nav class="navbar">
         <ul>
             <li><img src="https://dumbways.id/assets/images/brandwhite.png"></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project.html">My Project</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="project.html" class="nav-link">My Project</a></li>
+            <li><a href="" class="nav-link">About</a></li>
             <li class="liContact"><a href="contact.html" class="aContact">Contact Me</a></li>
         </ul>
     </nav>
@@ -25,17 +25,17 @@
             <h2>ADD MY PROJECT</h2>
             <form onsubmit="addProject(event)">
                 <label for="project-name">Project Name</label>
-                <input type="text" id="project-name" class="border-color">
+                <input type="text" id="project-name" class="border-color refresh">
     
                 <div class="date">
                     <label for="start-date" class="label-1">Start Date</label>
-                    <input type="date" id="start-date" class="start-date border-color" >
+                    <input type="date" id="start-date" class="start-date border-color refresh" >
                     <label for="end-date" class="label-2">End Date</label>
-                    <input type="date" id="end-date" class="end-date border-color">
+                    <input type="date" id="end-date" class="end-date border-color refresh">
                 </div>
     
                 <label for="desc">Description</label>
-                <textarea id="desc" class="border-color"></textarea>
+                <textarea id="desc" class="border-color refresh"></textarea>
     
                 <label for="tech">Technologies</label> 
                 <div class="checkbox-1">
@@ -53,11 +53,11 @@
                 
                 <label>Upload Image</label>
                 <div class="img-upload">
-                    <label for="image">
+                    <label for="image" class="border-color">
                         <p>choose</p>
                         <img src="img/attachment.png"/>
                     </label>
-                    <input type="file" id="image">
+                    <input type="file" id="image" class="refresh">
                 </div>
     
                 <button type="submit" class="btn-submit">Submit</button>
