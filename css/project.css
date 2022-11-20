@@ -298,8 +298,8 @@ input:focus, textarea:focus {
 
 .btn-submit:hover {
     cursor: pointer;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
-    -1.5px -1.5px 1.5px 1.5px rgba(97, 96, 96, 0.5),
+    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5),
+    -1.5px -1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5),
     3px 3px 3px 3px rgba(170, 170, 170, 0.5),
     -3px -3px 3px 3px rgba(170, 170, 170, 0.5),
     4.5px 4.5px 4.5px 4.5px rgba(190, 190, 190, 0.5),

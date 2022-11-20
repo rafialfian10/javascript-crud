@@ -55,6 +55,7 @@ function addProject(event) {
 function getBlog() {
     let cardContainer = document.getElementById("card-container");
     let allInput = document.querySelectorAll(".refresh");
+    let checkboxes = document.querySelectorAll(".mycheckbox");
 
     cardContainer.innerHTML = ''; 
 
