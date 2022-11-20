@@ -54,7 +54,7 @@ function addProject(event) {
 // Funvtion add data to card
 function getBlog() {
     let cardContainer = document.getElementById("card-container");
-    let allInput = document.querySelectorAll(".refresh");
+    let form = document.getElementById("form-project");
 
     cardContainer.innerHTML = ''; 
 
@@ -76,9 +76,7 @@ function getBlog() {
                                         </div>
                                     </div>`
     };
-    allInput.forEach(function(i) {
-        i.value = "";
-    })
+    form.reset()
 }
 
 // Function render time
@@ -154,6 +152,9 @@ function getDistanceTime(startDate, endDate) {
         // }
     }
 }
+
+
+
 
 // --------------------------------------------------------------------
 // Logic input color
