@@ -11,18 +11,19 @@ function addProject(event) {
     let img = document.getElementById("image").value; 
     let image = document.getElementById("image").files; // Untuk menangkap image, pdf, dll. Ini akan mengambil seluruh data files, tapi yang dibutuhkan adalah url/path-nya
     
-    // console.log("Gambar :", image[0]); 
-    // console.log("URL Gambar :", getImage);
+    console.log("Img Value :" ,img)
+    console.log("Img Files[0] :", image[0]); 
     
     // Logic input data
-    if(projectName == "" || startDate == "" || endDate == "" || desc == "" || img == "" ){
+    if(projectName == "" || startDate == "" || endDate == "" || desc == "" || img == ""){
         return alert("All input field must be not empty");
-    }  else {
+    } else {
         alert("New Card Created Successfully");
     }
-    // End logic input data
 
+    // End logic input data    
     let getImage = URL.createObjectURL(image[0]); // fungsi URL.createObjectURL untuk menangkap url gambar / path. Posisi dibawah kondisi karena, jika diatas kondisi akan error karena gambar belum ada gambar yang di inputkan
+    // console.log("URL Gambar :", getImage)[0];
 
     // Logic get all checked
     let result = [];
@@ -48,6 +49,39 @@ function addProject(event) {
 
     data.push(blog);
     getBlog();
+}
+
+// Function Validation file
+function fileValidation() {
+    let cardContainer = document.getElementsByClassName("cards");
+    let image = document.getElementById('image');
+    let imageValue = image.value;
+    let imageSize = image.files[0].size / 1000; //image.files[0].size untuk mengetahui ukuran file, lalu konversi dengan / 1000 agar nilai menjadi normal
+ 
+    // Ekstensi file valid
+    var extensionFileValid = /(\.jpg|\.jpeg|\.png|\.gif)/i;// Ekstensi file yang valid. i berfungsi untuk membaca ekstensi file dengan hruruf besar / kecil (png / PNG)
+     
+    if (!extensionFileValid.exec(imageValue)) { // jika imageValue yang dipanggil exec() tidak sama dengan ekstensi file
+        alert('File extension must be (jpg, jpeg, png)');
+        image.value = "";
+        return false;
+    } else if (imageSize > 2000) {
+        alert('File exceeds size limit (maksimum file 2MB)');
+        image.value = "";
+        return false;
+    } else {
+        // Tampilkan file ke dalam card
+        if (image.files == true && image.files[0] == true) { // jika image.file dan image.files[0] ada / telah lolos seleksi dari kondisi diatas
+            var reader = new FileReader();
+            // reader.onload = function(event) {
+            //     cardContainer.innerHTML ='<img src="' + event.target.result + '"/>';
+            // };
+            reader.onload = function() {
+                cardContainer.innerHTML ='<img src="' + result + '"/>';
+            };
+            reader.readAsDataURL(image.files[0]); // image.files[0] akan dibaca dengan reader dengan method readAsDataURL()
+        }
+    }
 }
 
 
@@ -200,6 +234,16 @@ inputBorderColor2.addEventListener('mouseenter', function(){
     });
 });
 // End logic input color
+
+// Logic slide navbar
+const slide = document.querySelector('.slide');
+const menuToggle = document.querySelector('.menu-toggle input');
+const nav = document.querySelector('.navbar ul');
+
+menuToggle.addEventListener('click', function(){
+    nav.classList.toggle('slide');
+});
+// End logic end navbar
 
 // Logic navbar color
 // let navbar = document.querySelectorAll(".nav-link");
