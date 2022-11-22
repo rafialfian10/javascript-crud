@@ -90,6 +90,10 @@ a.aContact:hover {
     -6px -6px 6px 6px rgba(215, 172, 254, 0.7);
   color: black;
 }
+
+.navbar a.active {
+  color: black;
+}
 /* End navbar */
 
 /* Content */
